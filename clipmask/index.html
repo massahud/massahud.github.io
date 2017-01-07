@@ -8,8 +8,8 @@
       background-color: red;
       width: 100px;
       height: 100px;
-      -webkit-mask: url(ic_cached_black_24px.svg);
-      mask: url(ic_cached_black_24px.svg);
+      -webkit-mask: url(./ic_cached_black_24px.svg);
+      mask: url(./ic_cached_black_24px.svg);
     }
 
     .sem-repeat {
@@ -43,7 +43,6 @@ ctx.fillStyle='#ff0000';
 ctx.fillRect(0,0,50,50);
 ctx.globalCompositeOperation='destination-atop';
 let img = new Image();
-img.crossorigin="Anonymous";
 img.src = 'https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_accessibility_black_24px.svg';
 img.addEventListener('load', () => {
   ctx.drawImage(img,0,0,50,50);
