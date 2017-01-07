@@ -26,8 +26,30 @@
   <div class='sem-repeat'></div>
 
 <div class='com-repeat'></div>
-
-<div class='com-canvas'></div>
+  <div class='com-canvas'></div>
+<script type='text/javascript'>
+  let canvas = document.createElement('canvas');
+canvas.width=50;
+canvas.height=50;
+canvas.style.width='50px';
+canvas.style.height='50px';
+canvas.style.display='none';
+console.log(document.body);
+document.body.appendChild(canvas);
+let ctx = canvas.getContext('2d');
+ctx.fillStyle='#ff0000';
+ctx.fillRect(0,0,50,50);
+ctx.globalCompositeOperation='destination-atop';
+let img = new Image();
+img.crossorigin="Anonymous";
+img.src = 'https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_accessibility_black_24px.svg';
+img.addEventListener('load', () => {
+  ctx.drawImage(img,0,0,50,50);
+  let divComCanvas = document.querySelector('.com-canvas');
+  divComCanvas.style.backgroundImage=`url(${canvas.toDataURL()})`;
+  console.log(divComCanvas);
+});
+</script>
 </body>
 
 </html>
